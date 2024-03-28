@@ -1,10 +1,12 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import classes from './Form.module.css'
 import { MyContext } from '../Context/Context';
-const Form = () => {
-    const{toDoList,updatesetToDoList}=useContext(MyContext)
+import { useRouter } from 'next/router';
+const Form = (props) => {
+    const router=useRouter();
     const name=useRef();
     const description=useRef();
+    ///this funcitn call on submti the button 
     function submitHandler(e){
         e.preventDefault();
         let obj={
@@ -12,8 +14,26 @@ const Form = () => {
           description:description.current.value,
           checked:false
         }
-        updatesetToDoList([...toDoList,obj])
+        async function sendata(){
+            const response=await fetch('/api/new-meetup',{
+                method:'POST',
+                body:JSON.stringify(obj),
+                headers:{
+                  'Content-Type':'application/json'
+                }
+              });
+        
+              const data=await response.json();
+              console.log(data);
+        }
+        sendata();
+        name.current.value='';
+        description.current.value='';
+
+        router.push('/today')
       }
+
+    
   return (
     <>
     <form className={classes.form} onSubmit={submitHandler}>
@@ -25,5 +45,9 @@ const Form = () => {
     </>
   )
 }
+
+
+
+
 
 export default Form

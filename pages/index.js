@@ -29,7 +29,6 @@ const HomePage = () => {
   return (
     <div>
       <ListItem toDoList={toDoList}/>
-      {showForm && <Form/>}
       <button onClick={()=>moveToRoutePage()} className='btn btn-primary border-1 mx-auto d-block' >Add To DO</button>
      
     </div>

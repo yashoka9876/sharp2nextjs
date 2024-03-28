@@ -11,8 +11,9 @@ export const MyContextProvider = ({ children }) => {
     const [showForm,setShowForm]=useState(false);
   
 
-  const updatesetToDoList = (data) => {
+  const updatesetToDoList = async(data) => {
     setToDoList(data);
+    
   };
 
   const updatesetCompletedTask = (index) => {

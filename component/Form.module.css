@@ -1,0 +1,21 @@
+.form{
+    width: 25%;
+    /* border: 3px solid rgb(17, 15, 15); */
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+}
+
+.form  input{
+border-bottom: 5px solid red;
+margin-bottom: 3px;
+}
+.form  textarea{
+    border-bottom: 5px solid red;
+    margin-bottom: 3px;
+    }
+.form  button{
+    border-bottom: 5px solid red;
+    margin-bottom: 3px;
+    }

@@ -1,0 +1,8 @@
+.ulist{
+    width: 20%;
+    /* border: 3px solid rgb(17, 15, 15); */
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+}
